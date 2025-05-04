@@ -1,0 +1,48 @@
+/* teleprompt.css */
+
+/* Root pane padding & transparent background already set in code */
+
+/* All words: medium‑gray, smooth, nice font */
+.teleprompter-word {
+  -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  -fx-font-size: 28px;
+  -fx-fill: #cccccc;
+  -fx-opacity: 0.8;
+  -fx-padding: 0 2px 0 2px;
+}
+
+/* Highlighted word: bright, bold, subtle glow */
+.teleprompter-highlight {
+  -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  -fx-font-size: 30px;
+  -fx-fill: #ffffff;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( Gaussian , rgba(0,0,0,0.6), 10, 0.0, 0, 0 );
+  -fx-background-color: rgba(255,255,255,0.15);
+  -fx-background-radius: 4px;
+  -fx-padding: 2px 4px 2px 4px;
+}
+
+/* Toggle mic button styling */
+.toggle-button {
+  -fx-font-size: 16px;
+  -fx-background-color: rgba(50, 50, 50, 0.7);
+  -fx-text-fill: #eee;
+  -fx-background-radius: 20px;
+  -fx-padding: 6px 12px;
+}
+.toggle-button:hover {
+  -fx-background-color: rgba(80, 80, 80, 0.8);
+}
+.toggle-button:selected {
+  -fx-background-color: rgba(100, 180, 100, 0.8);
+  -fx-text-fill: #fff;
+}
+
+/* ScrollPane and TextFlow backgrounds stay transparent */
+.scroll-pane {
+  -fx-background-color: transparent;
+}
+.text-flow {
+  -fx-background-color: transparent;
+}
