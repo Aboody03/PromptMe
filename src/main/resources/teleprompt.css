@@ -1,48 +1,51 @@
 /* teleprompt.css */
 
-/* Root pane padding & transparent background already set in code */
+/* Root pane is transparent, so the app window shows no chrome */
 
-/* All words: medium‑gray, smooth, nice font */
+/* Un‐highlighted words: light gray, slightly smaller */
 .teleprompter-word {
-  -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  -fx-font-size: 28px;
-  -fx-fill: #cccccc;
-  -fx-opacity: 0.8;
-  -fx-padding: 0 2px 0 2px;
+  -fx-fill: #CCCCCC;
+  -fx-font-size: 20px;
+  -fx-font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-/* Highlighted word: bright, bold, subtle glow */
+/* Highlighted word: warm amber, bigger & bold */
 .teleprompter-highlight {
-  -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  -fx-font-size: 30px;
-  -fx-fill: #ffffff;
+  -fx-fill: #FFCA28;
+  -fx-font-size: 24px;
   -fx-font-weight: bold;
-  -fx-effect: dropshadow( Gaussian , rgba(0,0,0,0.6), 10, 0.0, 0, 0 );
-  -fx-background-color: rgba(255,255,255,0.15);
+}
+
+/* The bottom control bar */
+.control-bar {
+  -fx-background-color: rgba(0, 0, 0, 0.6);
+  -fx-padding: 8px;
+}
+
+/* Shared button styling (both upload & mic buttons) */
+.button, .toggle-button {
+  -fx-background-color: rgba(255, 255, 255, 0.85);
+  -fx-text-fill: #333333;
+  -fx-font-size: 14px;
   -fx-background-radius: 4px;
-  -fx-padding: 2px 4px 2px 4px;
-}
-
-/* Toggle mic button styling */
-.toggle-button {
-  -fx-font-size: 16px;
-  -fx-background-color: rgba(50, 50, 50, 0.7);
-  -fx-text-fill: #eee;
-  -fx-background-radius: 20px;
+  -fx-border-radius: 4px;
   -fx-padding: 6px 12px;
-}
-.toggle-button:hover {
-  -fx-background-color: rgba(80, 80, 80, 0.8);
-}
-.toggle-button:selected {
-  -fx-background-color: rgba(100, 180, 100, 0.8);
-  -fx-text-fill: #fff;
+  -fx-cursor: hand;
 }
 
-/* ScrollPane and TextFlow backgrounds stay transparent */
-.scroll-pane {
-  -fx-background-color: transparent;
+/* Hover states to give them some lift */
+.button:hover, .toggle-button:hover {
+  -fx-background-color: rgba(255, 255, 255, 1);
+  -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 4, 0.0 , 0 , 2 );
 }
-.text-flow {
+
+/* When you click them */
+.button:pressed, .toggle-button:pressed {
+  -fx-background-color: #FFCA28;
+  -fx-text-fill: #212121;
+}
+
+/* Remove ScrollPane background */
+.scroll-pane > .viewport {
   -fx-background-color: transparent;
 }
