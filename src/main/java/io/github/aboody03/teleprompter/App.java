@@ -1,4 +1,4 @@
-package com.abdulrahmanmahmoud.teleprompter;
+package io.github.aboody03.teleprompter;
 
 import java.io.BufferedReader;
 import java.io.File;
