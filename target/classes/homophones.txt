@@ -103,7 +103,7 @@ chic,sheik
 choir,quire
 chord,cord,cored
 chute,shoot
-cite,sight,site
+cite,sight,site,same
 clause,claws
 click,clique
 close,clothes
@@ -268,7 +268,7 @@ loos,lose
 lose,loose
 made,maid
 mail,male
-main,mane
+main,mane,mean
 maize,mays,maze
 mall,maul
 manner,manor
