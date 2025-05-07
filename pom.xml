@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.aboody03</groupId>
-  <artifactId>teleprompter-app</artifactId>
+  <artifactId>PromptMe</artifactId>
   <version>1.0.0</version>
-  <name>Teleprompter App</name>
+  <name>PromptMe</name>
   <description>Invisible, voice‑aware teleprompter desktop app</description>
 
   <properties>

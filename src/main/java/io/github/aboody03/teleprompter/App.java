@@ -640,6 +640,7 @@ public class App extends Application {
 
         // ─── 15) Show ──────────────────────────────────────────────────────────────
         primaryStage.setScene(scene);
+        primaryStage.setTitle("PromptMe");
         primaryStage.show();
     }
 
