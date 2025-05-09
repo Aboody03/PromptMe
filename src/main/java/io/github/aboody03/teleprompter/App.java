@@ -1,3 +1,14 @@
+/*
+ * PromptMe
+ * ---------------------------------
+ * A JavaFX desktop teleprompter with Vosk speech‑recognition driven scrolling.
+ *
+ * @author  Abdulrahman Mahmoud
+ * @version 1.0.0
+ * @since   2025‑05‑08
+ * @license MIT
+ */
+
 package io.github.aboody03.teleprompter;
 
 import java.io.BufferedReader;
@@ -524,20 +535,11 @@ public class App extends Application {
         });
 
         // ─── 13) Load Vosk model once ─────────────────────────────────────────────
-        Path tmp = Files.createTempDirectory("vosk-model");
-        URI uri = getClass().getResource("/model/vosk-model-small-en-us-0.15").toURI();
-        Path modelRoot = Path.of(uri);
-        Files.walk(modelRoot).forEach(src -> {
-            try {
-                Path rel = modelRoot.relativize(src);
-                Path dst = tmp.resolve(rel.toString());
-                if (Files.isDirectory(src)) Files.createDirectories(dst);
-                else Files.copy(src, dst, StandardCopyOption.REPLACE_EXISTING);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-        model = new Model(tmp.toString());
+        Path modelRoot = Path.of("model", "vosk-model-small-en-us-0.15");
+        if (!Files.isDirectory(modelRoot)) {
+            throw new IOException("Vosk model folder not found: " + modelRoot.toAbsolutePath());
+        }
+        model = new Model(modelRoot.toString());
         recognizer = new Recognizer(model, 16000.0f);
 
         // ─── 14) Resize the window ──────────────────────────────────────────────────────

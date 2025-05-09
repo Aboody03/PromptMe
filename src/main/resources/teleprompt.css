@@ -68,7 +68,6 @@
 }
 .light-theme .control-bar .size-control > Label {
   -fx-text-fill: #1d3557;
-  /* you can also adjust font‑size, font‑weight here if you like */
 }
 
 /* light‑mode window control buttons */

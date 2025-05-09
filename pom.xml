@@ -8,7 +8,7 @@
   <artifactId>PromptMe</artifactId>
   <version>1.0.0</version>
   <name>PromptMe</name>
-  <description>Invisible, voice‑aware teleprompter desktop app</description>
+  <description>JavaFX teleprompter with real‑time Vosk speech‑driven scrolling</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,7 +68,6 @@
 
   <build>
     <plugins>
-      <!-- compile for Java 24 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -79,7 +78,6 @@
         </configuration>
       </plugin>
 
-      <!-- JavaFX plugin to launch the App -->
       <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
@@ -87,6 +85,29 @@
         <configuration>
           <mainClass>io.github.aboody03.teleprompter.App</mainClass>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.4.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>io.github.aboody03.teleprompter.App</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

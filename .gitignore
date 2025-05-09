@@ -1,24 +1,87 @@
-# Compiled class file
-*.class
+# ====================
+# Maven & build outputs
+# ====================
+/target/
+!/.mvn/wrapper/maven-wrapper.jar
 
-# Log file
-*.log
+# jlink runtime images
+/target/runtime/
+/runtime/
 
-# BlueJ files
-*.ctxt
+# jpackage outputs / installers
+/dist/
+/app-image/
+/dist-msi/
+/dist/app-image/
+/dist/msi/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# staging folders
+/target/app/
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
+# ====================
+# Packaged binaries & archives
+# ====================
+*.exe
+*.msi
+*.dmg
+*.app
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# ====================
+# Java artifacts
+# ====================
+*.class
+*.jar
+*.war
+*.nar
+*.ear
 hs_err_pid*
 replay_pid*
+
+# ====================
+# Logs & temp files
+# ====================
+*.log
+*.tmp
+*.cache
+
+# ====================
+# Vosk model data
+# ====================
+/model/vosk-model-small-en-us-0.15/
+/model/*.zip
+
+# ====================
+# IDE & editor folders
+# ====================
+# IntelliJ IDEA
+/.idea/
+/*.iml
+# VS Code
+/.vscode/
+/*.code-workspace
+# Eclipse
+/.project
+/.classpath
+/.settings/
+
+# ====================
+# macOS
+# ====================
+.DS_Store
+
+# ====================
+# Windows
+# ====================
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# ====================
+# Secrets & credentials
+# ====================
+*.jks
+*.p12
+.env
