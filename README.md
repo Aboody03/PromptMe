@@ -1,39 +1,103 @@
 # PromptMe
 
-PromptMe is a sleek, always‑on‑top voice-activated teleprompter application designed to make presentations and live speaking engagements smoother and more professional. It combines intuitive controls, powerful offline speech recognition, and even customization—no internet required.
+**PromptMe** is a lightweight, always‑on‑top, voice‑activated teleprompter app built with Java 24, JavaFX and Vosk. It lets you scroll your script hands‑free using offline speech recognition, or manually via mouse and keyboard, and ships as a portable App‑Image ZIP for Windows.
 
-Key Features
+---
+
+## Table of Contents
+
+1. [Key Features](#key-features)  
+2. [Prerequisites](#prerequisites)  
+3. [Download & Installation](#download--installation)  
+4. [Scripts](#scripts)  
+5. [Running the App](#running-the-app)  
+6. [License](#license)  
+
+---
+
+## Key Features
 
 - **Voice‑Activated Scrolling**  
-  - Offline speech recognition via VOSK  
-  - Say the next word or phrase to jump ahead  
-  - Homophone & fuzzy‑matching for “um”‑proof control  
+  - Offline speech recognition via Vosk  
+  - Homophone & fuzzy‑match support (“um”‑proof control)  
 
 - **Live Word Highlighting**  
   - Current word in bold colour  
-  - “Near” words subtly tinted for context  
+  - Neighboring words subtly tinted  
   - Click any word to jump instantly  
 
 - **Script Import & Reflow**  
   - Supports `.txt`, `.docx`, `.doc`, `.pdf`  
-  - Automatic text flow into a responsive `TextFlow` pane  
-  - Instant re‑highlight & scroll reset on upload  
+  - Responsive `TextFlow` pane with auto‑reset  
 
 - **Session Timer**  
-  - ▶︎ / ■ toggle starts & stops your clock  
-  - Elapsed time displayed in `m:ss` format  
-  - Perfect for pacing and time‑boxing  
+  - ▶︎ / ■ toggle starts & stops  
+  - Elapsed time in `m:ss` format  
 
 - **Customizable Appearance**  
-  - **Light** & **Dark** themes with one‑click toggle  
-  - Adjustable font size (12 – 48 px) with tick‑mark slider  
-  - Smooth hover‑grow animations on all controls  
+  - Light / Dark theme toggle  
+  - Adjustable font size (12 – 48 px)  
+  - Smooth hover‑grow animations  
 
 - **Manual Controls & Shortcuts**  
-  - Spacebar to control any of the controls 
-  - Vertical scroll slider for fine manual scroll  
-  - Click‑and‑drag anywhere (outside controls) to move/resize window  
+  - Spacebar advances word by word  
+  - Vertical slider for fine scroll  
+  - Click‑and‑drag (outside controls) to move/resize  
 
 - **Always‑On‑Top & Transparent**  
-  - Floating, frameless window with adjustable opacity  
-  - Hide your desktop distractions—focus on your words
+  - Frameless, floating window  
+  - Keep focus on your words, not distractions  
+
+---
+
+## Prerequisites
+
+- **Windows x64** (for portable ZIP)  
+- **No Java install required**—bundled runtime included  
+- Optional (for building):  
+  - Java 24 SDK  
+  - Maven 3.8+  
+  - WiX Toolset 3.11+ (for MSI builds)  
+
+---
+
+## Download & Installation
+
+1. Go to the [Releases](https://github.com/Aboody03/PromptMe/releases) page.  
+2. Download **PromptMe.zip** under **PromptMe v1.0.0**.  
+3. Unzip anywhere you like (Downloads, Desktop, USB drive, etc.).
+4. Double-click **PromptMe.exe** to launch.
+
+---
+
+## Scripts
+
+We include two helper scripts to grab the Vosk model when you first set up—or in CI:
+
+- **Windows PowerShell**  
+  ```powershell
+  .\scripts\download-model.ps1
+  ```
+
+This will:
+  1. Download `vosk-model-small-en-us-0.15.zip` from the official Vosk site.
+  2. Create `model/vosk-model-small-en-us-0.15/` directory.
+  3. Unzip the model files into that folder.
+
+- **macOS/Linux Bash (Untested)**
+  ```bash
+  ./scripts/download-model.sh
+  ```
+  Performs the same steps in a POSIX shell environment.
+
+After running either script, you’ll have the complete `model/...` folder ready for offline recognition.
+
+## Running the App
+1. **Double‑click** `PromptMe.exe`.
+2. **Upload** your script via the 📂 button.
+3. **Speak** or use the spacebar/slider to advance.
+4. **Toggle** themes and font size from the control bar.
+
+## License
+This project is licensed under the **MIT License**.
+See [LICENSE](https://github.com/Aboody03/PromptMe/blob/main/LICENSE) for details.
