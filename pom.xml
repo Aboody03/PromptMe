@@ -6,7 +6,7 @@
 
   <groupId>io.github.aboody03</groupId>
   <artifactId>PromptMe</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <name>PromptMe</name>
   <description>JavaFX teleprompter with real‑time Vosk speech‑driven scrolling</description>
 

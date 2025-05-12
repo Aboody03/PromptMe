@@ -29,6 +29,7 @@
 - **Script Import & Reflow**  
   - Supports `.txt`, `.docx`, `.doc`, `.pdf`  
   - Responsive `TextFlow` pane with auto‑reset  
+  - Import via upload button or drag-and-drop
 
 - **Session Timer**  
   - ▶︎ / ■ toggle starts & stops  
