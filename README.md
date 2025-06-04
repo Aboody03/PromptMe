@@ -10,8 +10,9 @@
 2. [Prerequisites](#prerequisites)  
 3. [Download & Installation](#download--installation)  
 4. [Scripts](#scripts)  
-5. [Running the App](#running-the-app)  
-6. [License](#license)  
+5. [Running the App](#running-the-app)
+6. [Demo](#demo)
+7. [License](#license)  
 
 ---
 
@@ -98,6 +99,10 @@ After running either script, you’ll have the complete `model/...` folder ready
 2. **Upload** your script via the 📂 button.
 3. **Speak** or use the spacebar/slider to advance.
 4. **Toggle** themes and font size from the control bar.
+
+## Demo
+
+https://github.com/user-attachments/assets/6626be42-ffdc-4a62-8160-d35f55ee3d4a
 
 ## License
 This project is licensed under the **MIT License**.
